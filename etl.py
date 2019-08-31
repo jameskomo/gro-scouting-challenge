@@ -36,10 +36,13 @@ cursor.execute("CREATE TABLE IF NOT EXISTS MEIV2(start_date DATE, end_date DATE,
 con.commit()  ##  The result is saved
 
 def add_data(data):
-    start_matrix = compile_data(data)[0]  ##  Obtain the start_date data from compile_data function
-    end_matrix = compile_data(data)[1]  ##  Obtain the end_date data from compile_data function  
+    start_matrix = compile_data(data)[0]  
+    end_matrix = compile_data(data)[1]    
     for i in range(41):  ##  For the range of all the years in the dataset
-        for j in range(len(end_matrix)):  ##  For total number of data points among a year
+        for j in range(len(end_matrix)):  ##  For total number of data points in a year
             cursor.execute("INSERT INTO MEIV2 VALUES(?,?,?)",(start_matrix[i][j][0],end_matrix[i][j][0],dfob.iloc[i][j+1]))
             ##  The 'inserting' query in SQL is run
-            con.commit()  ##  The results are saved.
+            con.commit()  
+
+add_data(dfob)  ##  We run the function to add the data to the table   
+con.close()  ##  Closing the contact with the database
