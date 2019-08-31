@@ -33,7 +33,7 @@ con = sqlite3.connect("meiv2.db")  ##  Creating the table
 cursor = con.cursor()  ##  Creating the cursor to work on the table
 
 cursor.execute("CREATE TABLE IF NOT EXISTS MEIV2(start_date DATE, end_date DATE, value REAL)")
-con.commit()  ##  The result is saved
+con.commit()  
 
 def add_data(data):
     start_matrix = compile_data(data)[0]  
