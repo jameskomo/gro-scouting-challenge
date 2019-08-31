@@ -25,4 +25,9 @@ def compile_data(data):
     start_matrix = pd.DataFrame(start_date)
     end_matrix = pd.DataFrame(end_date)
     return start_matrix, end_matrix
+
+##  This function above is done in order to keep the start date and end date in one list only
+##  This function will help us insert the start and end date data via SQLite later on.
+##  start_matrix will return the transpose of the starting date data.
+##  Similarly, end_matrix will return the transpose of the ending date data. 
 # print(dfob.columns)
