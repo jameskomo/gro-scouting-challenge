@@ -2,7 +2,7 @@ antiorm==1.2.1
 db==0.1.1
 db-sqlite3==0.0.1
 entrypoints==0.3
-numpy==1.17.1
+numpy==1.22.0
 pandas==0.25.1
 python-dateutil==2.8.0
 pytz==2019.2
